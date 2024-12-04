@@ -1,11 +1,14 @@
 import React from 'react'
-import { Button } from "@/components/ui/button"
+import Layout from './layouts/Layout'
+import NewsFeed from './components/NewsFeed'
 
 function App() {
   return (
-    <div className="p-4">
-      <Button>Hello shadcn</Button>
-    </div>
+    <Layout>
+      
+        <NewsFeed />
+      
+    </Layout>
   )
 }
 
