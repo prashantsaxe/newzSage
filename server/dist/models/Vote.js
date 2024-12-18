@@ -40,4 +40,6 @@ const VoteSchema = new mongoose_1.Schema({
     user_id: { type: mongoose_1.Schema.Types.ObjectId, ref: 'User', required: true },
     vote_type: { type: String, enum: ['upvote', 'downvote'], required: true },
 }, { timestamps: { createdAt: 'created_at', updatedAt: false } });
+// Add a unique index to prevent duplicate votes by the same user on the same news item
+// VoteSchema.index({ news_id: 1, user_id: 1 }, { unique: true });
 exports.default = mongoose_1.default.model('Vote', VoteSchema, 'votes');

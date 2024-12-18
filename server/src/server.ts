@@ -11,6 +11,7 @@ import vote from "./routes/voteRoute";
 import connectDB from './db';
 import allNews from "./routes/getallnews";
 import auth from "./routes/auth";
+import test from "./routes/test";
 // import userInfoRoute from "./routes/userInfoRoute";
 
 const app = express();
@@ -18,7 +19,7 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173', // Frontend URL (adjust accordingly)
+  origin: '*', // Frontend URL (adjust accordingly)
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow other methods as needed
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], // Allow additional headers if required
   credentials: true, // If you're using cookies or sessions
@@ -34,6 +35,7 @@ app.use("/api/v1/all", allNews);
 app.use("/api/v1/news", news);
 app.use("/api/v1/comment", comment);
 app.use("/api/v1/vote", vote);
+app.use("/test",test);
 
 // Start the server
 app.listen(3000, () => {

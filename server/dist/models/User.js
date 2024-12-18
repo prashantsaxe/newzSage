@@ -38,12 +38,15 @@ const mongoose_1 = __importStar(require("mongoose"));
 const UserSchema = new mongoose_1.Schema({
     username: { type: String, unique: true, required: true },
     email: { type: String, unique: true, required: true },
+    isPublisher: { type: Boolean, default: false },
     password_hash: { type: String, required: true },
     credibility_score: { type: Number, default: 0 },
     status: { type: String, default: 'active' },
     email_verified: { type: Boolean, default: false },
     last_login: { type: Date },
-    publisher: { type: mongoose_1.Schema.Types.ObjectId, ref: 'Publisher' },
+    government_id: { type: String, unique: true, sparse: true },
+    avatar_id: { type: String },
+    // publisher: { type: Schema.Types.ObjectId, ref: 'Publisher' },
     credibility: { type: mongoose_1.Schema.Types.ObjectId, ref: 'UserCredibility' }, // Added reference to UserCredibility
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } });
 exports.default = mongoose_1.default.model('User', UserSchema, 'users');

@@ -8,22 +8,35 @@ dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const userRoute_1 = __importDefault(require("./routes/userRoute"));
-const publisherRoute_1 = __importDefault(require("./routes/publisherRoute"));
+// import publisher from "./routes/publisherRoute";
 const newsRoute_1 = __importDefault(require("./routes/newsRoute"));
 const commentRoute_1 = __importDefault(require("./routes/commentRoute"));
 const voteRoute_1 = __importDefault(require("./routes/voteRoute"));
 const db_1 = __importDefault(require("./db"));
+const getallnews_1 = __importDefault(require("./routes/getallnews"));
+const auth_1 = __importDefault(require("./routes/auth"));
+const test_1 = __importDefault(require("./routes/test"));
+// import userInfoRoute from "./routes/userInfoRoute";
 const app = (0, express_1.default)();
 (0, db_1.default)();
 // Middleware
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: '*', // Frontend URL (adjust accordingly)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow other methods as needed
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], // Allow additional headers if required
+    credentials: true, // If you're using cookies or sessions
+}));
 // Routes
+// app.use('/api/v1/userInfo', userInfoRoute);
 app.use("/api/v1/user", userRoute_1.default);
-app.use("/api/v1/publisher", publisherRoute_1.default);
+app.use("/api/v1/details", auth_1.default);
+// app.use("/api/v1/publisher", publisher);
+app.use("/api/v1/all", getallnews_1.default);
 app.use("/api/v1/news", newsRoute_1.default);
 app.use("/api/v1/comment", commentRoute_1.default);
 app.use("/api/v1/vote", voteRoute_1.default);
+app.use("/test", test_1.default);
 // Start the server
 app.listen(3000, () => {
     console.log("Server is running on port 3000");

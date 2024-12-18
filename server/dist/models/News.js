@@ -38,14 +38,17 @@ const mongoose_1 = __importStar(require("mongoose"));
 const NewsSchema = new mongoose_1.Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
-    genres: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Genre' }], // References to Genre
-    imageUrls: [{ type: String, default: [] }], // Optional, defaults to an empty array
-    videoUrls: [{ type: String, default: [] }], // Optional, defaults to an empty array
+    genres: [{ type: String }],
+    imageUrls: [{ type: String, required: false }], // Optional, defaults to an empty array
+    videoUrls: [{ type: String, required: false }], // Optional, defaults to an empty array
     real_probability: { type: Number },
-    publisher_id: { type: mongoose_1.Schema.Types.ObjectId, ref: 'Publisher', required: true },
+    // publisher_id: { type: Schema.Types.ObjectId, ref: 'Publisher', required: true },
     comments: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Comment' }],
     votes: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Vote' }],
     upvote_count: { type: Number, default: 0 },
     downvote_count: { type: Number, default: 0 },
+    author: { type: String },
+    created_at: { type: Date, default: Date.now },
+    avatar_id: { type: String },
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } });
 exports.default = mongoose_1.default.model('News', NewsSchema, 'news');
