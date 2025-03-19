@@ -122,5 +122,5 @@ This project is licensed under the **MIT License**.
 
 ## Contact
 For inquiries or collaboration, reach out:
-- **GitHub**: [prashantsaxe](https://github.com/prashantsaxe)
-- **LinkedIn**: [Prashant Saxena](https://linkedin.com/in/prashant-saxena-131473193)
+- **GitHub**: [prashantsaxe](https://github.com/prashantsaxe) || [Anurag Khobragade](https://github.com/anurag2204-k)
+- **LinkedIn**: [Prashant Saxena](https://linkedin.com/in/prashant-saxena-131473193) || [Anurag Khobragade](https://www.linkedin.com/in/anuragk22)
