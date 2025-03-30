@@ -69,8 +69,7 @@ prashantsaxe-studychamber/
 ### Installation
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/prashantsaxe/studychamber.git
-   cd studychamber
+
    ```
 
 2. **Setup Virtual Environment**
@@ -128,12 +127,10 @@ We welcome contributions! To contribute:
 ---
 
 ## License
-This project is licensed under the **MIT License**.
+NO License.
 
 ---
 
 ## Contact
 For inquiries or collaboration, reach out:
-- **GitHub**: [prashantsaxe](https://github.com/prashantsaxe)
-- **LinkedIn**: [Prashant Saxena](https://linkedin.com/in/prashant-saxena-131473193)
 
