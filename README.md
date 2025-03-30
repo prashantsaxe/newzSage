@@ -122,5 +122,9 @@ NO License.
 
 ## Contact
 For inquiries or collaboration, reach out:
+
 - **GitHub**:  [Anurag Khobragade](https://github.com/anurag2204-k) || 
 - **LinkedIn**:  [Anurag Khobragade](https://www.linkedin.com/in/anuragk22) ||
+- **GitHub**:  [Prashant Kumar Saxena](https://github.com/prashantsaxe) || 
+- **LinkedIn**:  [Prashant Kumar Saxena](linkedin.com/in/prashant-saxena-131473193) ||
+
